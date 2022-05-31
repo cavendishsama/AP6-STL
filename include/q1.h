@@ -7,14 +7,14 @@
 
 namespace q1{
 
-// template <typename T, typename Func>
+template <typename T, typename Func>
 // using T = double;
-inline double gradient_descent(double initial_val, double step_size, std::function<double(double)> fun){
+T gradient_descent(T initial_val, T step_size, Func fun){
 
     size_t i{};
    
-    double current_point { initial_val  };
-    double next_point { current_point + step_size };
+    T current_point { initial_val  };
+    T next_point { current_point + step_size };
     
     if(fun(current_point) > fun(next_point) ){
         while(true){        
@@ -38,6 +38,7 @@ inline double gradient_descent(double initial_val, double step_size, std::functi
             current_point = current_point - step_size;
         }
     }
+    return true;
 
 }
 
