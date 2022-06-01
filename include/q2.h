@@ -24,15 +24,17 @@ namespace q2{
         size_t alkhol;
     };
 
-        inline std::vector<Patient> read_file(std::string filename){
+    inline std::vector<Patient> read_file(std::string filename){
         std::vector<Patient> _patient;
-        std::ifstream file("lung_cancer.cv");
+        std::ifstream file("lung_cancer.csv");
         std::stringstream buffer;
         buffer << file.rdbuf();
         std::string txt = buffer.str();
 
         std::regex pattern(R"((\w+)\s?,(\w+)\s?,(\d+),(\d+),(\d+),(\d+))");
-        std::cout << "checkpoint0" << std::endl;
+
+        std::cout << "checkpoint0" << std::endl;////////////////////////////////////////////////////////////////
+        
         std::smatch match;
 
         while(std::regex_search(txt, match, pattern)){
@@ -49,6 +51,15 @@ namespace q2{
         }
 
         return _patient;
+    }
+
+    inline void sort(std::vector<Patient>& patient1){
+
+        std::sort(patient1.begin(), patient1.end(), [](Patient first, Patient second){ 
+            size_t a { 3 * first.age + 5 * first.smokes + 2 * first.area_q + 4 * first.alkhol };
+            size_t b { 3 * second.age + 5 * second.smokes + 2 * second.area_q + 4 * second.alkhol };
+            return a < b ;
+        });
     }
 
 }
