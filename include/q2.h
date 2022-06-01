@@ -58,7 +58,7 @@ namespace q2{
         std::sort(patient1.begin(), patient1.end(), [](Patient first, Patient second){ 
             size_t a { 3 * first.age + 5 * first.smokes + 2 * first.area_q + 4 * first.alkhol };
             size_t b { 3 * second.age + 5 * second.smokes + 2 * second.area_q + 4 * second.alkhol };
-            return a < b ;
+            return a > b ;
         });
     }
 
