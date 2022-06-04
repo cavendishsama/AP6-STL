@@ -15,7 +15,7 @@ T gradient_descent(T initial_val, T step_size, Func fun = Func()){
     T current_point { initial_val  };
     T next_point { current_point + step_size };
     
-    if(fun(current_point) > fun(next_point) ){
+    if(fun(current_point) >= fun(next_point) ){
         while(true){        
             if( fun(current_point) < fun(next_point))
                 return current_point;
@@ -26,7 +26,7 @@ T gradient_descent(T initial_val, T step_size, Func fun = Func()){
         }
     }
         
-    if(fun(current_point) < fun(next_point)){
+    if(fun(current_point) <= fun(next_point)){
         while(true){
             if( fun(current_point) > fun(next_point) )
                 return next_point;
