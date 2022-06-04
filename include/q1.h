@@ -9,8 +9,6 @@ namespace q1{
 
 template <typename T, typename Func>
 T gradient_descent(T initial_val, T step_size, Func fun = Func()){
-
-    size_t i{};
    
     T current_point { initial_val  };
     T next_point { current_point + step_size };
@@ -22,7 +20,6 @@ T gradient_descent(T initial_val, T step_size, Func fun = Func()){
 
             current_point = next_point;
             next_point = current_point + step_size;
-            i++;
         }
     }
         
