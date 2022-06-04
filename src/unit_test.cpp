@@ -7,8 +7,7 @@
 #include "q2.h"
 #include "q3.h"
 #include "q4.h"
-
-/*
+// /*
 TEST(HW6Test, TEST1) {
     auto min1 = q1::gradient_descent(0.01, 0.1, cos);
     EXPECT_NEAR(min1, 3.14, 0.1);
@@ -40,6 +39,7 @@ TEST(HW6Test, TEST4) {
     EXPECT_NEAR(min, -1.57, 0.01);
 }
 
+
 TEST(HW6Test, TEST5) {
     std::vector<q2::Patient> patients = q2::read_file("lung_cancer.csv");
     EXPECT_EQ(patients.size(), 59);
@@ -65,7 +65,7 @@ TEST(HW6Test, TEST6) {
     EXPECT_EQ(patients[30].name, "Jane Wyman");
     EXPECT_EQ(patients[58].name, "Joan Crawford");
 }
-
+// */ 
 TEST(HW6Test, TEST7) {
     auto flights = q3::gather_flights("flights.txt");
 
@@ -98,7 +98,7 @@ TEST(HW6Test, TEST9) {
     EXPECT_NEAR(kalman.y, 0.4440, 0.01);
     // std::cout << kalman.x << ", " << kalman.y << std::endl;
 }
-*/
+
 
 
 
