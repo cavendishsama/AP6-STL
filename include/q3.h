@@ -9,7 +9,6 @@
 #include<vector>
 #include<queue>
 
-// \d-\s(\w+):(\w+)\s-\s\w+:(\d+)h(\d+)*m?\s-\s(\w+):(\d)\s-\s(\w+):(\d+)h(\d+)*m?,*(\d+)*h*(\d+)*m*,?(\d)*h*(\d+)*m*\s-\s(\w+):(\d+)
 namespace q3{
     struct Flight
     {
@@ -23,7 +22,6 @@ namespace q3{
         size_t connection_times;
         size_t price;
     };
-    //duration + connection_times + 3*price
 
     // inline auto func = [](Flight first, Flight second){
     //     size_t a { first.duration + first.connection_times + 3 * first.price };
@@ -49,8 +47,6 @@ namespace q3{
         std::regex pattern(R"(\d-\s(\w+):(\w+)\s-\s\w+:(\d+)h(\d+)*m?\s-\s(\w+):(\d)\s-\s(\w+):(\d+)h(\d+)*m?,*(\d+)*h*(\d+)*m*,?(\d)*h*(\d+)*m*\s-\s(\w+):(\d+))");
         std::smatch match;
 
-
-        std::cout << "match[0]" << std::endl;
 
         while(std::regex_search(txt, match, pattern)){
             // /*

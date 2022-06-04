@@ -10,7 +10,7 @@ namespace q4{
 
     struct Vector2D
     {   
-        // Vector2D() = default;
+        Vector2D() = default;
         Vector2D(double _x, double _y): x{_x}, y{_y} { }
     
         double x{};

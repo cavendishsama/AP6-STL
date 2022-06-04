@@ -14,8 +14,7 @@ namespace q2{
         Patient(std::string _name, size_t _age, size_t _smokes, size_t _area_q, size_t _alkhol) :
         name {_name}, age{_age}, smokes{_smokes},
         area_q{_area_q}, alkhol{_alkhol} 
-        {
-        }
+        {  }
 
         std::string name;
         size_t age;
@@ -32,8 +31,6 @@ namespace q2{
         std::string txt = buffer.str();
 
         std::regex pattern(R"((\w+)\s?,(\w+)\s?,(\d+),(\d+),(\d+),(\d+))");
-
-        std::cout << "checkpoint0" << std::endl;////////////////////////////////////////////////////////////////
         
         std::smatch match;
 
